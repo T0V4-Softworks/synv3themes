@@ -1,0 +1,18 @@
+{
+    "folder": "mdi:folder",
+    "file": "mdi:file",
+    "file-script": "mdi:language-lua",
+    "file-text": "mdi:file-code",
+
+    "btn-execute": "fluent:play-20-filled",
+    "btn-clear": "fluent:eraser-20-filled",
+    "btn-file-open": "fluent:folder-open-16-filled",
+    "btn-file-execute": "fluent:engine-20-filled",
+    "btn-file-save": "fluent:document-save-20-filled",
+
+    "page-editor": "fluent:code-20-regular",
+    "page-customization": "fluent:paint-brush-20-regular",
+    "page-settings-engine": "fluent:window-dev-tools-20-regular",
+    "page-powertools": "fluent:position-backward-20-regular",
+    "page-settings": "fluent:settings-20-regular"
+}

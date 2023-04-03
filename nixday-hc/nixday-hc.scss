@@ -1,0 +1,863 @@
+@use "reset" as *;
+$disable-fill: false;
+//@STITCH
+
+/* NIXDAY COLORS CONFIGURATION: */
+
+$ACCENT: "ffc86a";
+$ACCENT_D: "ba9154";
+$BACK: "11141d";
+$BAS: "0e1014";
+$FRONT: "13161c";
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body, #syn-app, #ban_bar, .ux_button, .hw-interface-file-list, .editor-sidebar-category, .ux_interface_tab, .page_container {
+    font-family: 'Ubuntu Mono', monospace;
+
+    .entry {
+        font-family: 'Ubuntu Mono', monospace;
+    }
+}
+
+.hw-titlebar {
+  background: #0e1014;
+  height: 35px;
+  border: none;
+  color: ##{$ACCENT};
+}
+
+.monaco-editor *{
+  font-family: unset;
+  font-size: unset;
+  padding: unset;
+  margin: unset;
+}
+
+#gateway-page #logo-container #extra .h-8.w-8{
+  align-self: center!important;
+}
+
+#gateway-page #logo-container #extra .h-8.w-8 svg{
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.tabs-container{
+  background: ##{$BAS};
+  box-shadow: none!important;
+  border-bottom: 1px solid ##{$ACCENT}!important;
+}
+
+#titlebar-logo{
+  display: none;
+}
+
+#titlebar-branding {
+    margin-bottom: 0.1em;
+ 
+    &::after {
+        color: ##{$ACCENT};
+        content: 'SX';
+        font-size: 22px;
+        white-space: pre;
+        padding-top: 0.4em;
+        transform: translate(0,-50%);
+    }
+}
+
+.hw-titlebar #controls .control{
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.hw-titlebar #controls .control svg{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+.hw-multimenu .list {
+   background: #0e1014;
+}
+
+.hw-list .caption{
+  background-color: ##{$FRONT}!important;
+}
+
+.hw-list .divide-y .value{
+  background-color: ##{$BACK}!important;
+}
+
+.hw-list .divide-y .value.selected{
+  text-shadow: 0 0 5px black;
+  background-color: ##{$ACCENT}!important;
+}
+
+.add-tab{
+  margin-left: 5px;
+  color: ##{$ACCENT}!important;
+}
+
+.add-tab:hover{
+  color: ##{$ACCENT};
+  cursor: pointer;
+}
+
+.hw-editor-tab .content .caption{
+  font-size: 12px;
+  color: ##{$ACCENT};
+  padding-right: 5px;
+  transform: translate(0,2px);
+}
+
+.hw-editor-tab iconify-icon{
+  color: ##{$ACCENT};
+}
+
+.hw-editor-tab .close{
+  background: transparent!important;
+}
+
+.hw-editor-tab{
+  max-height: 32px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  margin-left: 3px;
+  border-radius: 6px;
+  box-shadow: none;
+  border: none;
+}
+
+.hw-editor-tab:hover{
+  max-height: 32px;
+  background: black;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: none;
+  border: none!important;
+}
+
+.hw-editor-tab.select{
+  max-height: 32px;
+  box-shadow: 0 0 2px #101010;
+  background: ##{$FRONT};
+  border: none!important;
+  border-radius: 6px;
+}
+
+.monaco-editor .margin-view-overlays{
+  background: ##{$BAS};
+}
+
+#ban_control_feedback{
+  color: ##{$ACCENT};
+}
+
+.node{
+  background: ##{$ACCENT};
+}
+
+.hw-dialog .inputs{
+  border: none;
+  background: black;
+}
+
+.hw-dialog .h-full .caption{
+  margin-left: 30px;
+  padding-bottom: 10px;
+}
+
+.hw-dialog .h-full{
+  margin-left: 5px;
+}
+
+.hw-dialog{
+  background: black;
+  border-radius: 0;
+  max-width: 700px;
+  border: 1px solid ##{$ACCENT};
+}
+
+.hw-dialog *{
+  font-weight: 200;
+}
+
+.hw-dialog .caption{
+  font-weight: 300;
+  color: white;
+}
+.hw-dialog iconify-icon{
+  position: absolute;
+  top: 15px;
+  padding: 0;
+}
+.hw-dialog .hw-button{
+  background: ##{$FRONT};
+  color: ##{$ACCENT};
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border:1px solid ##{$ACCENT};
+  border-radius: 0px;
+  transition: 0.05s;
+}
+.hw-dialog .hw-button:hover{
+  background-color: ##{$ACCENT};
+  padding-left: 15px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+.hw-dialog .hw-button:active{
+  background-color: ##{$ACCENT_D};
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+  border:1px solid ##{$ACCENT_D};
+  transition: 0.05s;
+}
+
+.bg-black{
+  background: ##{$BAS}!important;
+}
+
+.hw-textbox .inner{
+  border: none;
+}
+
+#canvas-language button{
+  cursor: pointer;
+  color: ##{$ACCENT};
+  background: ##{$FRONT};
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  margin-right: 8px;
+  border:1px solid ##{$ACCENT};
+  border-radius: 0px;
+  transition: 0.05s;
+}
+
+#canvas-language button:hover{
+  background: ##{$ACCENT};
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  margin-right: 8px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+
+#canvas-language button:active{
+  background: ##{$ACCENT_D};
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  margin-right: 8px;
+  border:1px solid ##{$ACCENT_D};
+  transition: 0.05s;
+}
+
+
+.hw-textbox{
+  background: ##{$FRONT};
+  color: ##{$ACCENT};
+}
+
+.hw-textbox *{
+  color: ##{$ACCENT}!important;
+}
+
+.hw-dialog .hw-textbox div{
+  border: none;
+}
+
+.sidebar{
+  box-shadow: none;
+  background: ##{$BAS};
+  border-left: 1px solid ##{$ACCENT};
+}
+
+.sidebar .module-caption{
+  background: ##{$ACCENT}!important;
+  border: none;
+}
+
+.sidebar .module .node div .node-caption{
+  transition: 0.2s;
+  background: ##{$FRONT};
+  color: ##{$ACCENT};
+}
+.editor-page .h-full{
+  background: ##{$BAS};
+}
+
+.sidebar .text-blue-400,.text-yellow-400,.text-green-400{
+  color: ##{$BAS};
+}
+
+.sidebar iconify-icon{
+  color: ##{$BAS};
+}
+
+.sidebar .module .node div .node-caption iconify-icon{
+  color: ##{$ACCENT}!important;
+}
+
+.sidebar .hw-textbox{
+  margin: 3px;
+}
+
+.sidebar .module .node div .node-caption:hover{
+  margin-left: 5px;
+  transition: 0.2s;
+}
+
+.action-bar{
+  border-top: 1px solid ##{$ACCENT}!important;
+  background: ##{$BAS};
+}
+
+.action-list{
+  padding-right: 2px;
+  font-weight: 200;
+}
+
+.hw-navigationbar .entry{
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.1s;
+  width: 35px;
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  color: ##{$ACCENT_D};
+}
+
+#ban_control_language,#ban_control_minimize,#ban_control_maximize,#ban_control_restore,#ban_control_close{
+  color: ##{$ACCENT};
+}
+
+.hw-navigationbar .entry iconify-icon,svg{
+  width: 35px!important;
+  height: 35px;
+}
+
+#logo-container iconify-icon,svg{
+  width: 32px;
+  height: 32px;
+}
+
+.hw-navigationbar .entry iconify-icon.flex.text-base{
+  width: 20px;
+  font-size: 25px;
+  height: 35px;
+  border-bottom: 0px solid ##{$ACCENT};
+}
+
+
+.hw-navigationbar .entry:hover{
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  transition: 0.1s;
+  color: ##{$ACCENT};
+}
+
+.hw-navigationbar .entry:hover iconify-icon.flex.text-base{
+  width: 20px;
+  height: 35px;
+  transition: 0.1s;
+}
+
+.hw-navigationbar .entry div.label{
+  background: ##{$FRONT};
+  border-radius: 0px;
+  color: ##{$ACCENT};
+  border: 1px solid ##{$ACCENT}!important;
+}
+
+.hw-navigationbar .entry div.label iconify-icon{
+  font-size: 25px;
+}
+
+.hw-navigationbar .entry.select {
+  border-radius: 0;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  color: ##{$ACCENT};
+  transition: 0.1s;
+}
+
+.hw-navigationbar .entry.select iconify-icon.flex.text-base{
+  width: 20px;
+  height: 35px;
+  border-bottom: 2px solid ##{$ACCENT};
+  transition: 0.1s;
+}
+
+body{
+  background: ##{$BAS};
+}
+
+#application{
+  background: ##{$BAS};
+}
+
+
+.editor-page .h-full section .hw-button{
+  cursor: pointer;
+  color: ##{$ACCENT};
+  font-size: 14px;
+  background: ##{$FRONT};
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin:5px;
+  border:1px solid ##{$ACCENT}!important;
+  border-radius: 0px;
+  transition: 0.05s;
+}
+
+.editor-page .h-full .divide-y{
+  border: 1px solid ##{$ACCENT};
+  border-radius: 0;
+}
+
+.editor-page .h-full .divide-y .p-2{
+  border-top: 1px solid ##{$ACCENT};
+  border-radius: 0;
+}
+.editor-page .h-full .divide-y .ml-auto{
+  border-left: 1px solid ##{$ACCENT};
+  border-radius: 0;
+  text-shadow: 0 0 5px black;
+  cursor: pointer;
+  background: ##{$ACCENT};
+  transition: 0.05s;
+}
+.editor-page .h-full .divide-y .ml-auto:hover{
+  background: ##{$ACCENT_D};
+  transition: 0.05s;
+}
+
+.editor-page .h-full section{
+  border-right: 1px solid ##{$ACCENT};
+}
+
+.editor-page .h-full section .z-10{
+  border-top: 1px solid ##{$ACCENT};
+}
+
+.editor-page .h-full section .hw-button:hover{
+  background: ##{$ACCENT};
+  padding-left: 10px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin:5px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+
+.editor-page .h-full section .hw-button:active{
+  background: ##{$ACCENT_D};
+  padding-left: 10px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin:5px;
+  border:1px solid ##{$ACCENT_D}!important;
+  transition: 0.05s;
+}
+
+.editor-page .h-full section div.pointer-events-auto{
+  box-shadow: 0 0 5px #101010;
+}
+
+.editor-page .h-full section div.pointer-events-auto .mb-2 div.flex:nth-child(even){
+  border-top: 1px solid ##{$ACCENT};
+  border-radius: 0;
+}
+
+.action-list button{
+  cursor: pointer;
+  font-size: 14px;
+  color: ##{$ACCENT};
+  background: ##{$FRONT};
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  border-radius: 0px;
+  transition: 0.05s;
+}
+.action-list button:hover{
+  background: ##{$ACCENT};
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+.action-list button:active{
+  background: ##{$ACCENT_D};
+  padding-left: 10px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT_D};
+  transition: 0.05s;
+}
+
+.hw-multimenu .list{
+  background: #16181f;
+  min-width: 230px;
+}
+
+.hw-multimenu .pages{
+  background: ##{$BAS};
+}
+
+.hw-multimenu .caption{
+  color: ##{$ACCENT};
+}
+
+
+.hw-multimenu .pages .page .category-label{
+  background: ##{$FRONT};
+  border-radius: 5px;
+  color: ##{$ACCENT};
+  margin: 5px;
+  box-shadow: 0 0 5px black;
+}
+
+.hw-multimenu .list .hw-textbox{
+  margin: 4px;
+}
+
+.hw-multimenu .caption{
+  display: block!important;
+  margin-left: unset;
+}
+
+.hw-multimenu .caption.hidden{
+  display: block!important;
+  margin-left: 5px;
+}
+
+.hw-multimenu .list .entry *{
+  color: unset;
+}
+
+.hw-multimenu .list .entry:hover *{
+  color: ##{$ACCENT_D};
+}
+
+.hw-multimenu .list .entry{
+  color: white;
+  border-radius: 4px;
+  transition: 0.1s;
+  margin-top: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-color: ##{$ACCENT_D};
+  border: none;
+  transition: 0.1s;
+}
+.hw-multimenu .list .entry:hover{
+  border-left: 4px solid ##{$ACCENT_D};
+  transition: 0.1s;
+  color: ##{$ACCENT_D};
+  background: #0e1014;
+}
+.hw-multimenu .list .entry.select{
+  color: ##{$ACCENT};
+  border-left: 4px solid ##{$ACCENT};
+  background: #313131;
+  transition: 0.1s;
+  box-shadow: 0 0 5px #101010;
+}
+#attach-button{
+  display: none;
+}
+
+.hw-multimenu .hw-button{
+  background: ##{$BAS};
+  cursor: pointer;
+  font-weight: 200;
+  color: ##{$ACCENT};
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  border-radius: 0px;
+  outline-color: ##{$ACCENT}!important;
+  transition: 0.05s;
+}
+.hw-multimenu .hw-button:hover{
+  background: ##{$ACCENT};
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+.hw-multimenu .hw-button:active{
+  background: ##{$ACCENT_D};
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT_D};
+  transition: 0.05s;
+}
+
+.hw-dropdown .selector{
+  background: ##{$FRONT};
+  border: none;
+  color: ##{$ACCENT};
+}
+
+.hw-dropdown .list .highlight{
+  background: ##{$ACCENT}!important;
+}
+
+.hw-dropdown .list .highlight *{
+  color: white!important;
+  text-shadow: 0 0 5px black;
+}
+
+.hw-dropdown .list{
+  background: ##{$BACK};
+  border: none;
+}
+
+div.flex.flex-col.items-center.text-white.p-2.rounded-md.text-xs.bg-stone-800{
+  background: #353535!important;
+}
+
+.hw-changelog{
+  border-radius: 0;
+  color: ##{$ACCENT_D};
+  border: 1px solid ##{$ACCENT};
+  background: black;
+}
+
+.hw-changelog .caption{
+  background: black;
+  border-bottom: 1px solid ##{$ACCENT};
+  color: ##{$ACCENT};
+}
+
+.hw-progress-view{
+  border: 1px solid ##{$ACCENT};
+  background: black;
+  border-radius: 0;
+}
+
+.hw-progress-view .font-bold{
+  color: ##{$ACCENT_D}
+}
+
+.hw-progress-view .ml-auto.mr-1.aspect-square.h-6.w-6{
+  position: relative;
+}
+
+.hw-progress-view iconify-icon{
+  color: ##{$ACCENT}!important;
+}
+
+.hw-progress-view .CircularProgressbar{
+  position: absolute;
+  right: 1px;
+  bottom: -4px;
+}
+
+.hw-progress-view .CircularProgressbar .CircularProgressbar-trail{
+  stroke: ##{$ACCENT_D}!important;
+}
+
+.hw-progress-view .CircularProgressbar .CircularProgressbar-path{
+  stroke: ##{$ACCENT}!important;
+}
+
+.hw-progress-view .caption{
+  background: black;
+  color: ##{$ACCENT};
+  border-bottom: 1px solid ##{$ACCENT};
+}
+
+.hw-contextmenu{
+  border-radius: 0;
+  border: 1px ##{$ACCENT} solid;
+  background: ##{$BACK};
+  color: ##{$ACCENT};
+}
+.hw-contextmenu .entry div{
+  background: ##{$BACK};
+  border-radius: 0!important;
+}
+.hw-checkbox{
+  border: 1px gray solid;
+  background: #0e1014;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+.hw-checkbox div.ease-in-out{
+  background-size: contain;
+  border-radius: 0;
+  margin-left: 2px;
+}
+.hw-checkbox .translate-x-1{
+  background: #0e1014;
+  box-shadow: none;
+}
+.hw-checkbox .translate-x-5{
+  position: absolute;
+  right: 24px;
+  background: transparent;
+  box-shadow: none;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://svgur.com/i/r_X.svg');
+}
+.hw-checkbox.on{
+  background: ##{$ACCENT};
+}
+
+#actions *{
+  cursor: pointer;
+}
+#actions .flex.gap-1.px-1 div{
+  background: unset;
+  transition: 0.05s;
+}
+#actions .flex.gap-1.px-1 div *{
+  color: ##{$ACCENT}!important;
+}
+#actions .flex.gap-1.px-1 div:hover{
+  background: ##{$ACCENT};
+  border-radius: 9999px;
+  transition: 0.05s;
+}
+#actions .flex.gap-1.px-1 div:hover *{
+  color: ##{$FRONT}!important;
+}
+
+#nav-plugins iconify-icon{
+  color: #5e5d12;
+}
+
+/* CONSOLE THEMING: */
+#console-body{
+  background: ##{$BAS}!important;
+}
+
+#console-body .console-contents{
+  background: ##{$BAS};
+}
+
+#console-body .console-header{
+  background: ##{$FRONT};
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 5px black;
+  border: none;
+  color: ##{$ACCENT};
+}
+
+#console-body .hw-textbox{
+  background: ##{$BACK};
+}
+
+#console-body button{
+  cursor: pointer;
+  font-size: 14px;
+  background: ##{$FRONT};
+  color: ##{$ACCENT};
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  border-radius: 0px;
+  transition: 0.05s;
+}
+#console-body button:hover{
+  background: ##{$ACCENT};
+  padding-left: 10px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT};
+  transition: 0.05s;
+}
+#console-body button:active{
+  background: ##{$ACCENT_D};
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border:1px solid ##{$ACCENT_D};
+  transition: 0.05s;
+}
